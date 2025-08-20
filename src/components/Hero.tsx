@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
 
 export const Hero = () => {
@@ -38,22 +37,6 @@ export const Hero = () => {
           </p>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-up" style={{ animationDelay: '0.6s' }}>
-          <Button 
-            size="lg" 
-            className="bg-gradient-gold hover:shadow-glow transition-all duration-300 text-wolf-dark font-semibold px-8 py-4 text-lg hover-lift"
-          >
-            Ver Menú
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-wolf-gold text-wolf-gold hover:bg-wolf-gold hover:text-wolf-dark transition-all duration-300 px-8 py-4 text-lg hover-lift"
-          >
-            Conoce Más
-          </Button>
-        </div>
       </div>
 
       {/* Scroll Indicator */}
