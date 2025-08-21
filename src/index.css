@@ -1,176 +1,98 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+:root {
+  --background: 220 15% 8%;
+  --foreground: 42 87% 86%;
+  --card: 220 13% 10%;
+  --card-foreground: 42 87% 86%;
+  --popover: 220 13% 10%;
+  --popover-foreground: 42 87% 86%;
+  --primary: 42 87% 55%;
+  --primary-foreground: 220 15% 8%;
+  --secondary: 217 19% 15%;
+  --secondary-foreground: 42 87% 86%;
+  --muted: 217 19% 15%;
+  --muted-foreground: 42 30% 65%;
+  --accent: 217 19% 15%;
+  --accent-foreground: 42 87% 86%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 217 19% 20%;
+  --input: 217 19% 20%;
+  --ring: 42 87% 55%;
+  --radius: 0.75rem;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
 
-@layer base {
-  :root {
-    --background: 15 8% 8%;
-    --foreground: 45 12% 85%;
-
-    --card: 20 8% 12%;
-    --card-foreground: 45 12% 85%;
-
-    --popover: 20 8% 12%;
-    --popover-foreground: 45 12% 85%;
-
-    --primary: 45 95% 65%;
-    --primary-foreground: 15 8% 8%;
-
-    --secondary: 20 12% 16%;
-    --secondary-foreground: 45 12% 85%;
-
-    --muted: 20 8% 14%;
-    --muted-foreground: 45 5% 55%;
-
-    --accent: 45 95% 65%;
-    --accent-foreground: 15 8% 8%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 45 12% 85%;
-
-    --border: 20 12% 20%;
-    --input: 20 12% 16%;
-    --ring: 45 95% 65%;
-
-    --wolf-gold: 45 95% 65%;
-    --wolf-dark: 15 8% 8%;
-    --wolf-gray: 20 8% 12%;
-    --wolf-light: 45 12% 85%;
-
-    --gradient-hero: linear-gradient(135deg, hsl(var(--wolf-dark)) 0%, hsl(20 8% 10%) 50%, hsl(var(--wolf-dark)) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--wolf-gold)) 0%, hsl(50 85% 55%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--wolf-gray)) 0%, hsl(20 10% 8%) 100%);
-
-    --shadow-glow: 0 0 40px hsl(var(--wolf-gold) / 0.2);
-    --shadow-card: 0 10px 30px hsl(var(--wolf-dark) / 0.8);
-    --shadow-hover: 0 20px 40px hsl(var(--wolf-gold) / 0.15);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* Wolf Kitchen Brand Colors */
+  --wolf-gold: 42 87% 55%;
+  --wolf-dark: 220 15% 8%;
+  --wolf-gray: 217 19% 15%;
+  --wolf-light: 42 87% 86%;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
+* {
+  border-color: hsl(var(--border));
 }
 
-@layer base {
-  .bg-gradient-hero { background: var(--gradient-hero); }
-  .bg-gradient-gold { background: var(--gradient-gold); }
-  .bg-gradient-card { background: var(--gradient-card); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-card { box-shadow: var(--shadow-card); }
-  .shadow-hover { box-shadow: var(--shadow-hover); }
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
 }
 
-@layer utilities {
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-  
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-  }
-  
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-  
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-  
-  .animate-slide-reveal {
-    animation: slideReveal 1s ease-out forwards;
-  }
-  
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-  }
-  
-  .text-gradient-gold {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .backdrop-blur-strong {
-    backdrop-filter: blur(20px) saturate(180%);
-  }
+/* Wolf Kitchen Custom Styles */
+.bg-gradient-hero {
+  background: linear-gradient(135deg, 
+    hsl(var(--wolf-dark)) 0%, 
+    hsl(220 20% 12%) 50%, 
+    hsl(var(--wolf-dark)) 100%);
 }
 
-@keyframes fadeUp {
+.bg-gradient-card {
+  background: linear-gradient(145deg, 
+    hsl(217 19% 12%) 0%, 
+    hsl(217 19% 15%) 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, 
+    hsl(var(--wolf-gold)) 0%, 
+    hsl(45 90% 60%) 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, 
+    hsl(var(--wolf-gold)) 0%, 
+    hsl(45 90% 70%) 50%,
+    hsl(var(--wolf-gold)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px hsl(var(--wolf-gold) / 0.3);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px hsl(var(--wolf-gold) / 0.2);
+}
+
+/* Enhanced Animations */
+@keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -181,45 +103,12 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes fadeIn {
+@keyframes rotate-360 {
   from {
-    opacity: 0;
+    transform: rotate(0deg);
   }
   to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+    transform: rotate(360deg);
   }
 }
 
@@ -232,23 +121,90 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 20px hsl(var(--wolf-gold) / 0.2);
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--wolf-gold) / 0.5);
   }
-  to {
-    box-shadow: 0 0 40px hsl(var(--wolf-gold) / 0.4);
+  50% {
+    box-shadow: 0 0 20px hsl(var(--wolf-gold) / 0.8);
   }
 }
 
-@keyframes slideReveal {
+@keyframes slide-in-left {
   from {
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: scale(1);
     opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animate-rotate-360 {
+  animation: rotate-360 1s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scale-up 0.6s ease-out forwards;
+}
+
+/* Menu specific animations */
+.menu-plate-enter {
+  animation: scale-up 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.menu-plate-exit {
+  animation: rotate-360 0.5s ease-in forwards, 
+             fade-up 0.5s ease-in forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-gradient-gold {
+    font-size: clamp(2rem, 8vw, 4rem);
   }
 }
 
@@ -262,10 +218,16 @@ All colors MUST be HSL.
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--wolf-gold));
+  background: hsl(var(--wolf-gold) / 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--wolf-gold) / 0.8);
+  background: hsl(var(--wolf-gold));
+}
+
+/* Selection highlight */
+::selection {
+  background: hsl(var(--wolf-gold) / 0.3);
+  color: hsl(var(--wolf-light));
 }

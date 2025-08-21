@@ -1,6 +1,6 @@
 
 import { HeroSlider } from "@/components/HeroSlider";
-import { MenuSection } from "@/components/MenuSection";
+import { AnimatedMenuSection } from "@/components/AnimatedMenuSection";
 import { AboutSection } from "@/components/AboutSection";
 import { Footer } from "@/components/Footer";
 
@@ -12,7 +12,7 @@ const Index = () => {
           <HeroSlider />
         </section>
         <section id="menu">
-          <MenuSection />
+          <AnimatedMenuSection />
         </section>
         <section id="nosotros">
           <AboutSection />
