@@ -87,6 +87,15 @@ export const HeroSlider = () => {
         </div>
       </div>
 
+      {/* Decorative stripe pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src="/lovable-uploads/6de2ee17-e61b-414f-9af0-fb7d071d7e2d.png" 
+          alt="Decorative stripes"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Animated particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -106,14 +115,20 @@ export const HeroSlider = () => {
       {/* Main content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center">
         <div className="text-center px-4 max-w-6xl mx-auto">
-          {/* Logo */}
+          {/* Logo with geometric wolf */}
           <div 
             className={`mb-12 transition-all duration-1000 ${
               isAnimating ? 'scale-110 rotate-3' : 'scale-100 rotate-0'
             }`}
           >
-            <div className="inline-flex items-center justify-center w-40 h-40 rounded-full bg-gradient-card shadow-glow mb-8 hover-lift">
-              <div className="text-8xl animate-bounce" style={{ animationDuration: '3s' }}>🐺</div>
+            <div className="inline-flex items-center justify-center w-40 h-40 rounded-full bg-gradient-card shadow-glow mb-8 hover-lift relative">
+              {/* Geometric wolf logo */}
+              <img 
+                src="/lovable-uploads/61737990-efef-4c7c-a9ca-c9e55d3fdecb.png" 
+                alt="Wolf Kitchen Logo"
+                className="w-24 h-24 opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-gold opacity-20 rounded-full animate-pulse"></div>
             </div>
           </div>
 
@@ -159,6 +174,18 @@ export const HeroSlider = () => {
                     {slide.subtitle}
                   </h2>
                   <div className="w-32 h-1 bg-gradient-gold mb-8 animate-pulse"></div>
+                  
+                  {/* Enjoy the moment script */}
+                  {slide.id === 1 && (
+                    <div className="mb-4">
+                      <img 
+                        src="/lovable-uploads/b195ab70-744b-4689-9656-9791f3f448de.png" 
+                        alt="Enjoy the moment social club"
+                        className="h-16 opacity-90 animate-float"
+                      />
+                    </div>
+                  )}
+                  
                   <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light tracking-wider">
                     {slide.description}
                   </p>
@@ -208,9 +235,17 @@ export const HeroSlider = () => {
         </div>
       </div>
 
-      {/* Decorative elements */}
+      {/* Decorative elements with branding */}
       <div className="absolute top-20 left-20 w-20 h-20 border border-wolf-gold/30 rounded-full animate-spin" style={{ animationDuration: '10s' }}></div>
       <div className="absolute bottom-20 right-20 w-16 h-16 border border-wolf-gold/20 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
+      
+      {/* Brand stripe elements */}
+      <div className="absolute top-1/4 right-10 opacity-20">
+        <div className="w-32 h-2 bg-gradient-gold transform rotate-45"></div>
+      </div>
+      <div className="absolute bottom-1/4 left-10 opacity-20">
+        <div className="w-24 h-2 bg-gradient-gold transform -rotate-45"></div>
+      </div>
     </section>
   );
 };
